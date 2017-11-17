@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masa Wu Design</title>
     <style>
+
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding:0;
+            background: url(images/landing-page/bg.jpg);
+        }
+
         @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
         /*typewriting effect for intro text*/
 
@@ -36,7 +46,7 @@
         }
 
         .type1 {
-            animation: typing1 1.5s steps(10, end), blink-caret 1.8s 0.1s step-end forwards;
+            animation: typing1 .5s steps(10, end), blink-caret 1.8s 0.1s step-end forwards;
         }
 
         .h1-second {
@@ -51,7 +61,7 @@
         }
 
         .type2 {
-            animation: typing2 3.9s steps(40, end), blink-caret 4s 0.5s step-end forwards;
+            animation: typing2 1.9s steps(40, end), blink-caret 4s 0.5s step-end forwards;
         }
         /* The typing effect */
 
@@ -86,7 +96,7 @@
 
         .path-vert {
             stroke-dasharray: 1200;
-            animation: draw1 3.5s linear alternate;
+            animation: draw1 3.5s linear forwards;
         }
 
         @keyframes draw1 {
@@ -202,6 +212,17 @@
 
         .hide {
             display: none;
+        }
+
+        .opahide {
+            opacity: 0;
+            animation: reveal 1s forwards;
+        }
+
+        @keyframes reveal{
+            to {
+                opacity: 1;
+            }
         }
 
         /* gray div intro page */
@@ -808,23 +829,98 @@
             letter-spacing: .1em;
             /* Adjust as needed */
         }
+        .int-70{
+           font-size: 50px;
+        }
+
     </style>
   </defs>
   <title>landingpagesvg</title>
-  <g id="screen" class="hide">
+  <g id="screen" class="opahide hide" cursor="pointer">
     <rect class="int-1" x="412.83" y="70.84" width="375" height="225.6" rx="16.01" ry="16.01"/>
     <path class="int-2" d="M378,337.89h51.14c7-2-1.34-7.27-2-7.9l-14-6.14v-14h0l-1-27.07H372v55.15Z" transform="translate(228.33 22.73)"/>
     <path class="int-2" d="M365,337.89H313.84c-7-2,1.34-7.27,2-7.9l14-6.14v-14h0l1-27.07H371v55.15Z" transform="translate(228.33 22.73)"/>
+
+
+      <!-- Text using the #pattern in defs as the fill -->
+  <text  class="start hide" x="48%" text-anchor="middle" y="43%" dy="0.4em" fill="url(#pattern)" font-family="Open Sans Condensed" font-size="50px">
+      START >
+      </text>
+
+  <defs>
+    <!-- Da gradient -->
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0">
+      <stop offset="0%" style="stop-color:#33235b;"/>
+      <stop offset="25%" style="stop-color:#D62229;"/>
+      <stop offset="50%" style="stop-color:#E97639;"/>
+      <stop offset="75%" style="stop-color:#792042;"/>
+      <stop offset="100%" style="stop-color:#33235b;"/>
+    </linearGradient>
+
+    <!-- Stitch 2 gradients together for seamless animation  -->
+    <pattern id="pattern" x="0" y="0" width="300%" height="100%" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="150%" height="100%" fill="url(#gradient)">
+        <animate attributeType="XML"
+                 attributeName="x"
+                 from="0" to="150%"
+                 dur="7s"
+                 repeatCount="indefinite"/>
+      </rect>
+      <rect x="-150%" y="0" width="150%" height="100%" fill="url(#gradient)">
+        <animate attributeType="XML"
+                 attributeName="x"
+                 from="-150%" to="0"
+                 dur="7s"
+                 repeatCount="indefinite"/>
+      </rect>
+    </pattern>
+
+    <!-- Pull in font -->
+    <!-- Copied from: https://static.sonos.com/v1/fonts/logo/sonos-logo-regular-webfont.svg -->
+    <font horiz-adv-x="1024" >
+      <font-face font-family="sonos-logoregular" units-per-em="2048" ascent="1920" descent="-128" />
+      <missing-glyph horiz-adv-x="500" />
+      <glyph unicode="&#xd;" horiz-adv-x="682" />
+      <glyph unicode=" " />
+      <glyph unicode="N" horiz-adv-x="812" d="M0 412h150v636l662 -664v1000h-148v-640l-664 664v-996z" />
+      <glyph unicode="O" horiz-adv-x="1946" d="M470 896q0 210 150 364q148 148 362 148t362 -148q150 -154 150 -364q0 -212 -150 -362t-362 -150t-362 150t-150 362zM620 896q0 -152 106 -258q104 -108 256 -108q154 0 256 108q108 108 108 258q0 148 -108 260q-104 108 -256 108q-148 0 -256 -108 q-106 -110 -106 -260z" />
+      <glyph unicode="S" horiz-adv-x="674" d="M0 1124q0 -58 26 -110q28 -52 80 -90q32 -26 86 -52q68 -30 124 -46q124 -40 174 -84q34 -30 34 -74q0 -52 -48 -92q-56 -42 -138 -42q-62 0 -122 26q-38 16 -72 40l-118 -80q0 -4 24 -24q24 -24 60 -46q108 -66 228 -66q70 0 132 22q66 24 108 62q44 38 72 92 q24 54 24 110q0 54 -26 110q-28 52 -78 90q-34 28 -88 52q-38 18 -122 46q-122 36 -174 82q-36 32 -36 74q0 54 50 92q54 44 138 44q60 0 120 -26q32 -12 72 -40l120 80q-2 0 -24 24q-18 18 -62 46q-104 64 -226 64q-74 0 -132 -20t-110 -62q-48 -44 -70 -92 q-26 -56 -26 -110z" />
+      <glyph unicode="&#xa0;" />
+      <glyph unicode="&#x2000;" horiz-adv-x="704" />
+      <glyph unicode="&#x2001;" horiz-adv-x="1408" />
+      <glyph unicode="&#x2002;" horiz-adv-x="704" />
+      <glyph unicode="&#x2003;" horiz-adv-x="1408" />
+      <glyph unicode="&#x2004;" horiz-adv-x="469" />
+      <glyph unicode="&#x2005;" horiz-adv-x="352" />
+      <glyph unicode="&#x2006;" horiz-adv-x="234" />
+      <glyph unicode="&#x2007;" horiz-adv-x="234" />
+      <glyph unicode="&#x2008;" horiz-adv-x="176" />
+      <glyph unicode="&#x2009;" horiz-adv-x="281" />
+      <glyph unicode="&#x200a;" horiz-adv-x="78" />
+      <glyph unicode="&#x202f;" horiz-adv-x="281" />
+      <glyph unicode="&#x205f;" horiz-adv-x="352" />
+      <glyph unicode="&#x25fc;" horiz-adv-x="1000" d="M0 0z" />
+    </font>
+  </defs>
+
+
+
+
+   <!-- <text class="start int-69 int-70 hide" transform="translate(551 184.39)">Start <tspan x="0" y="48"></tspan></text>-->
   </g>
-  <path id="int-d1" class="int-3 hide" d="M469.41,81l17.29-10.14,16.84,10.88L486.25,91.83Z" transform="translate(228.33 22.73)"/>
-  <path id="int-d4" class="int-3 hide" d="M254.57,70.29,265,87.43l-10.64,17L244,87.28Z" transform="translate(228.33 22.73)"/>
-  <path id="int-d2" class="int-3 hide" d="M236.41,248l17.29-10.14,16.84,10.88-17.29,10.07Z" transform="translate(228.33 22.73)"/>
-  <path id="int-d3" class="int-3 hide" d="M483.7,225.29,494,242.51l-10.76,16.91L473,242.2Z" transform="translate(228.33 22.73)"/>
-  <polyline id="line2" class="int-4 hide" points="370.83 334.23 452.83 335.23 486 272.06"/>
-  <polyline id="line4" class="int-4 hide" points="368.83 49.06 402 112.23 484 111.23"/>
-  <polyline id="line3" class="int-4 hide" points="833.33 327.23 800.17 264.06 718.17 265.06"/>
-  <polyline id="line1" class="int-4 hide" points="712.23 100.62 747.31 38.5 829.24 42"/>
-  <g id="project1" class="hide">
+  <path id="int-d1" class="int-3 hide inner-dia" d="M469.41,81l17.29-10.14,16.84,10.88L486.25,91.83Z" transform="translate(228.33 22.73)"/>
+  <path id="int-d4" class="int-3 hide inner-dia" d="M254.57,70.29,265,87.43l-10.64,17L244,87.28Z" transform="translate(228.33 22.73)"/>
+  <path id="int-d2" class="int-3 hide inner-dia" d="M236.41,248l17.29-10.14,16.84,10.88-17.29,10.07Z" transform="translate(228.33 22.73)"/>
+  <path id="int-d3" class="int-3 hide inner-dia" d="M483.7,225.29,494,242.51l-10.76,16.91L473,242.2Z" transform="translate(228.33 22.73)"/>
+
+    <polyline id="line1" class="int-4 hide line path-vert" points="712.23 100.62 747.31 38.5 829.24 42"/>
+    <polyline id="line3" class="int-4 hide line path-vert" points="833.33 327.23 800.17 264.06 718.17 265.06"/>
+  <polyline id="line2" class="int-4 hide line path-vert" points="370.83 334.23 452.83 335.23 486 272.06"/>
+
+  <polyline id="line4" class="int-4 hide line path-vert" points="368.83 49.06 402 112.23 484 111.23"/>
+
+
+  <g id="project1" class="project hide">
     <g id="_Group_" data-name="&lt;Group&gt;">
       <g>
         <path class="int-5" d="M366.9,215c1.5,1.3,0,10.9-.9,16h0a28.7,28.7,0,0,0-8.8,1.8v-.1c-2.4-1.3.3-19.9.3-19.9S364.8,213.2,366.9,215Z" transform="translate(228.33 22.73)"/>
@@ -893,7 +989,7 @@
     </g>
     <path class="int-15" d="M389.9,213c3.9-1.3,7.1-5.2,5.9-8.9-.5-1.6-7.4-21.6-8.6-21.5-.8,0-2.7,5.7-1.1,11.1.7,2.3,2.2,4.9,2.3,8.9a7.58,7.58,0,0,1-.5,3,9.64,9.64,0,0,1-3.7,3.8c-1.9,1.2-4.4,2-6,3.4C380.8,214.7,387.1,213.9,389.9,213Z" transform="translate(228.33 22.73)"/>
   </g>
-  <g id="project2" class="hide">
+  <g id="project2" class="project hide">
     <g id="castle">
       <path class="int-16" d="M423.92,153.25c.66-.21,2.48,2.2,8,6.17,0,0,5.61,4.1,5.05,5.82-.38,1.21-1.91.91-4.55,3.47a11.94,11.94,0,0,0-2.54,3.37,6.88,6.88,0,0,0-.72,2c-.38,2.37,1.09,3.64.58,3.95-1.36.91-15.86-5.38-14.56-9.83,1-3.29,9.47-2.95,11.43-7C428.42,157.45,423,153.53,423.92,153.25Z" transform="translate(228.33 22.73)"/>
       <path class="int-16" d="M406.62,142.85c0,2.06,0,4.68,1.88,5.87,2.27,1.44,5.32-.48,8.6.45a8.75,8.75,0,0,1,6,9.37c-.91,5.27-7.57,5.79-7.88,9.68-.44,5.64,13.5,7.15,15.7,14,2.73,8.4-12,16.44-20.93,19.11-2.18.65-6.37,1.82-9.1.76s-2.73-4-2.73-5c0-2.26,1.16-3.64,1.76-4.78,1.45-2.73.26-4.87-5.46-14.63-5.64-9.58-5.72-9.54-5.68-10,.57-6,9.1-6.63,14.35-14.86,3.89-6.06,3.56-12.39,3.75-12.37S406.61,141.39,406.62,142.85Z" transform="translate(228.33 22.73)"/>
@@ -1030,7 +1126,7 @@
       </g>
     </g>
   </g>
-  <g id="nav-menu" class="project3 hide">
+  <g id="nav-menu" class="project hide">
     <path class="int-55" d="M374.1,78.9l.81,82,81,.19S458.09,82.1,374.1,78.9Z" transform="translate(228.33 22.73)"/>
     <path class="int-55" d="M455.65,162.07l-82,.86-.14,81S452.51,246.06,455.65,162.07Z" transform="translate(228.33 22.73)"/>
     <path class="int-55" d="M291,161l82-.76.24-81S294.24,77,291,161Z" transform="translate(228.33 22.73)"/>
@@ -1056,7 +1152,7 @@
       <path class="int-64" d="M363,165h7l1.81-6.35a.2.2,0,0,1,.38,0l3.58,11.63a.2.2,0,0,0,.39,0l1.71-7.71a.2.2,0,0,1,.37,0L380,166h6" transform="translate(228.33 22.73)"/>
     </g>
   </g>
-  <g id="swisStyle" class="project4 hide">
+  <g id="swisStyle" class="project hide">
     <g id="swisstyle-2" data-name="swisstyle">
       <text class="int-65" transform="matrix(0.83, -0.56, -0.56, -0.83, 584.77, 166.52)">Style</text>
       <text class="int-66" transform="translate(528.64 231.74) rotate(-34.01)">Swis</text>
@@ -1067,10 +1163,10 @@
       <ellipse class="int-67" cx="646.53" cy="229.73" rx="23" ry="22.5"/>
     </g>
   </g>
-  <text class="text1 hide int-69" transform="translate(840 56.39)">Miss Chili <tspan x="0" y="48">mini game</tspan></text>
-  <text class="text2 hide int-69" transform="translate(0 319.39)"><tspan class="int-68">Y</tspan><tspan x="23.73" y="0">oung Frankenstein</tspan><tspan x="0" y="48" xml:space="preserve"> interactive teaser</tspan></text>
-  <text class="text3 hide int-69" transform="translate(843 331.39)">SwisStyle<tspan x="0" y="48">responsive webpage</tspan></text>
-  <text class="text4 hide int-69" transform="translate(221 34.39)">Animated <tspan x="0" y="48">menu</tspan></text>
+  <text class="text hide int-69" transform="translate(840 56.39)">Miss Chili <tspan x="0" y="48">mini game</tspan></text>
+  <text class="text hide int-69" transform="translate(120 319.39)"><tspan class="int-69">Y</tspan><tspan x="11.73" y="0">oung Frankenstein</tspan><tspan x="0" y="48" xml:space="preserve"> interactive teaser</tspan></text>
+  <text class="text hide int-69" transform="translate(843 331.39)">Swiss Style<tspan x="0" y="48">responsive webpage</tspan></text>
+  <text class="text hide int-69" transform="translate(221 34.39)">Animated <tspan x="0" y="48">menu</tspan></text>
 </svg>
 
 
@@ -1085,19 +1181,21 @@
         var h1Second = document.querySelector(".h1-second");
         var dia = document.querySelectorAll(".dia");
         var navLine = document.querySelector(".navLine");
-        var intD1 = document.querySelector("#int-d1");
-        var text1 = document.querySelector(".text1");
-        var project1 = document.querySelector("#project1");
-        var line1 = document.querySelector("#line1");
+        var innerDia = document.querySelectorAll(".inner-dia");
+        var line = document.querySelectorAll(".line");
+        var text = document.querySelectorAll(".text");
+        var project = document.querySelectorAll(".project");
         var screen = document.querySelector("#screen");
+        var start = document.querySelector(".start");
 
         masaWuDesign.addEventListener("animationend", shrink)
 
         function shrink() {
             svgText.classList.add("smallUp")
+            svgText.addEventListener("transitionend", aniNav)
         }
 
-        svgText.addEventListener("transitionend", aniNav)
+
 
         // left navigation bar animation
 
@@ -1131,23 +1229,187 @@
          // typewriting effect on Passionate graphic designer and Web dev
 
         setTimeout(function(){
-             h1First.classList.remove("hide");
+            h1First.classList.remove("hide");
             console.log("remove hide")
             h1First.classList.add("type1");
-            h1First.addEventListener("animationend", function() {
-                h1Second.classList.remove("hide");
-                h1Second.classList.add("type2");
-                h1Second.addEventListener("animationend", showIntro)
-            })
+
             }, 5600);
 
+        h1First.addEventListener("animationend", function() {
+            h1Second.classList.remove("hide");
+            h1Second.classList.add("type2");
+            //h1Second.addEventListener("animationend", showIntro)
+            })
+
+        // projects loop show one project at the time automatically
+
+        h1Second.addEventListener("animationend", showIntro);
+
         function showIntro() {
-            intD1.classList.remove("hide");
-            text1.classList.remove("hide");
-            project1.classList.remove("hide");
-            screen.classList.remove("hide");
-            line1.classList.remove("hide");
+          screen.classList.remove("hide");
+            start.classList.remove("hide");
+            start.classList.add();
         }
+
+
+        screen.addEventListener("click", startMe);
+
+        function startMe() {
+
+
+            /*let state = "first";
+
+
+            if (state == "first"){
+            innerDia[0].classList.remove("hide");
+            text[0].classList.remove("hide");
+            project[0].classList.remove("hide");
+            line[0].classList.remove("hide");
+
+            innerDia[1].classList.add("hide");
+            text[3].classList.add("hide");
+            project[2].classList.add("hide");
+            line[3].classList.add("hide");
+
+            console.log("1");
+
+            setTimeout(function(){
+            state="second"
+                 console.log("run 2");
+             }, 1200);
+
+
+            }
+            if (state == "second"){
+            innerDia[0].classList.add("hide");
+            text[0].classList.add("hide");
+            project[0].classList.add("hide");
+            line[0].classList.add("hide");
+
+            innerDia[3].classList.remove("hide");
+            text[2].classList.remove("hide");
+            project[3].classList.remove("hide");
+            line[1].classList.remove("hide");
+
+                 console.log("2");
+
+            setTimeout(function(){
+            state="third"
+                console.log("run 3");
+             }, 1200);
+            }
+           if (state == "third") {
+
+
+            innerDia[3].classList.add("hide");
+            text[2].classList.add("hide");
+            project[3].classList.add("hide");
+            line[1].classList.add("hide");
+
+            innerDia[2].classList.remove("hide");
+            text[1].classList.remove("hide");
+            project[1].classList.remove("hide");
+            line[2].classList.remove("hide");
+
+                 console.log("3");
+
+                setTimeout(function(){
+              state="fourth"
+                     console.log("run 4");
+             }, 1200);
+            }
+
+            if (state == "fourth") {
+            innerDia[2].classList.add("hide");
+            text[1].classList.add("hide");
+            project[1].classList.add("hide");
+            line[2].classList.add("hide");
+
+            innerDia[1].classList.remove("hide");
+            text[3].classList.remove("hide");
+            project[2].classList.remove("hide");
+            line[3].classList.remove("hide");
+
+                 console.log("4");
+
+                setTimeout(function(){
+             state="first"
+                     console.log("run 1");
+             }, 1200);
+
+
+            }*/
+            aniFirst();
+
+            function aniFirst() {
+              start.classList.add("hide");
+
+            innerDia[0].classList.remove("hide");
+            text[0].classList.remove("hide");
+            project[0].classList.remove("hide");
+            line[0].classList.remove("hide");
+
+            innerDia[1].classList.add("hide");
+            text[3].classList.add("hide");
+            project[2].classList.add("hide");
+            line[3].classList.add("hide");
+            console.log("1")
+            }
+
+
+            line[0].addEventListener("animationend", function(){
+                start.classList.add("hide");
+            innerDia[0].classList.add("hide");
+            text[0].classList.add("hide");
+            project[0].classList.add("hide");
+            line[0].classList.add("hide");
+
+            innerDia[3].classList.remove("hide");
+            text[2].classList.remove("hide");
+            project[3].classList.remove("hide");
+            line[1].classList.remove("hide");
+             console.log("2")
+             });
+
+
+            line[1].addEventListener("animationend", function(){
+                start.classList.add("hide");
+            innerDia[3].classList.add("hide");
+            text[2].classList.add("hide");
+            project[3].classList.add("hide");
+            line[1].classList.add("hide");
+
+            innerDia[2].classList.remove("hide");
+            text[1].classList.remove("hide");
+            project[1].classList.remove("hide");
+            line[2].classList.remove("hide");
+                 console.log("3")
+             });
+
+            line[2].addEventListener("animationend", function(){
+                start.classList.add("hide");
+            innerDia[2].classList.add("hide");
+            text[1].classList.add("hide");
+            project[1].classList.add("hide");
+            line[2].classList.add("hide");
+
+            innerDia[1].classList.remove("hide");
+            text[3].classList.remove("hide");
+            project[2].classList.remove("hide");
+            line[3].classList.remove("hide");
+                 console.log("4")
+             });
+
+
+
+             line[3].addEventListener("animationend", aniFirst)
+
+
+
+
+        }
+
+
 
     </script>
 
