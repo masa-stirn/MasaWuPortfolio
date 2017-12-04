@@ -16,6 +16,10 @@
             background: url(images/landing-page/bg.jpg);
         }
 
+        .clickable {
+            cursor: pointer;
+        }
+
         @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
         /*typewriting effect for intro text*/
 
@@ -258,6 +262,17 @@
             right:0;
             margin:auto;
         }
+
+        footer {
+            position: absolute;
+    text-align: center;
+            bottom: 0;
+            left:0;
+            right: 0;
+    color: #333;
+    font-size: 0.7em;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
 
 
 
@@ -555,24 +570,64 @@
       .dia-3 {
         fill: #d0dbf4;
       }
+        .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    right: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
     </style>
   </defs>
   <title>Left Navigation Bar</title>
   <path class="navLine path-vert hide" fill="#000" stroke-width="1" stroke="#000" d="M150 39 v190 240"/>
+            <def class="tooltip">
 <path id="d1" class="dia dia-3 hide" d="M282,5l11,17-11,17-10-17Z"  transform="translate(-132 -6)"/>
-<path id="d2" class="dia dia-2 hide" d="M282,75l11,17-11,17-10-17Z"  transform="translate(-132 -6)"/>
-<path id="d3" class="dia dia-2 hide" d="M282,149l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
- <path id="d4" class="dia dia-2 hide" d="M282,224l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
-<path id="d5" class="dia dia-2 hide" d="M282,299l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
-<path id="d6" class="dia dia-2 hide" d="M282,373l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
-<path id="d7" class="dia dia-2 hide" d="M282,448l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
-<path id="d8" class="dia dia-1 path-vert hide" d="M282,-4l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
-<path id="d9" class="dia dia-1 hide" d="M282,68l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
-<path id="d10" class="dia dia-1 hide" d="M282,140l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
-<path id="d11" class="dia dia-1 hide" d="M282,216l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
-<path id="d12" class="dia dia-1 hide" d="M282,291l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
-<path id="d13" class="dia dia-1 hide" d="M282,365l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
-<path id="d14" class="dia dia-1 hide" d="M282,440l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
+
+  <text class="tooltiptext">Tooltip text</text>
+</def>
+<path id="d2" class="dia dia-2 hide clickable" d="M282,75l11,17-11,17-10-17Z"  transform="translate(-132 -6)"/>
+<path id="d3" class="dia dia-2 hide clickable" d="M282,149l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
+ <path id="d4" class="dia dia-2 hide clickable" d="M282,224l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
+<path id="d5" class="dia dia-2 hide clickable" d="M282,299l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
+<path id="d6" class="dia dia-2 hide clickable" d="M282,373l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
+<path id="d7" class="dia dia-2 hide clickable" d="M282,448l11,17-11,17-10-17Z" transform="translate(-132 -6)"/>
+<path id="d8" class="dia dia-1 path-vert hide clickable" d="M282,-4l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
+<path id="d9" class="dia dia-1 hide clickable" d="M282,68l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
+<path id="d10" class="dia dia-1 hide clickable" d="M282,140l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
+<path id="d11" class="dia dia-1 hide clickable" d="M282,216l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
+<path id="d12" class="dia dia-1 hide clickable" d="M282,291l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
+<path id="d13" class="dia dia-1 hide clickable" d="M282,365l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
+<path id="d14" class="dia dia-1 hide clickable" d="M282,440l17,26-17,26-17-25Z" transform="translate(-132 -6)"/>
 </svg>
     </div>
 
@@ -908,10 +963,10 @@
 
    <!-- <text class="start int-69 int-70 hide" transform="translate(551 184.39)">Start <tspan x="0" y="48"></tspan></text>-->
   </g>
-  <path id="int-d1" class="int-3 hide inner-dia" d="M469.41,81l17.29-10.14,16.84,10.88L486.25,91.83Z" transform="translate(228.33 22.73)"/>
-  <path id="int-d4" class="int-3 hide inner-dia" d="M254.57,70.29,265,87.43l-10.64,17L244,87.28Z" transform="translate(228.33 22.73)"/>
-  <path id="int-d2" class="int-3 hide inner-dia" d="M236.41,248l17.29-10.14,16.84,10.88-17.29,10.07Z" transform="translate(228.33 22.73)"/>
-  <path id="int-d3" class="int-3 hide inner-dia" d="M483.7,225.29,494,242.51l-10.76,16.91L473,242.2Z" transform="translate(228.33 22.73)"/>
+  <path id="int-d1" class="int-3 hide inner-dia clickable" d="M469.41,81l17.29-10.14,16.84,10.88L486.25,91.83Z" transform="translate(228.33 22.73)"/>
+  <path id="int-d4" class="int-3 hide inner-dia clickable" d="M254.57,70.29,265,87.43l-10.64,17L244,87.28Z" transform="translate(228.33 22.73)"/>
+  <path id="int-d2" class="int-3 hide inner-dia clickable" d="M236.41,248l17.29-10.14,16.84,10.88-17.29,10.07Z" transform="translate(228.33 22.73)"/>
+  <path id="int-d3" class="int-3 hide inner-dia clickable" d="M483.7,225.29,494,242.51l-10.76,16.91L473,242.2Z" transform="translate(228.33 22.73)"/>
 
     <polyline id="line1" class="int-4 hide line path-vert" points="712.23 100.62 747.31 38.5 829.24 42"/>
     <polyline id="line3" class="int-4 hide line path-vert" points="833.33 327.23 800.17 264.06 718.17 265.06"/>
@@ -920,7 +975,7 @@
   <polyline id="line4" class="int-4 hide line path-vert" points="368.83 49.06 402 112.23 484 111.23"/>
 
 
-  <g id="project1" class="project hide">
+  <g id="project1" class="project hide clickable">
     <g id="_Group_" data-name="&lt;Group&gt;">
       <g>
         <path class="int-5" d="M366.9,215c1.5,1.3,0,10.9-.9,16h0a28.7,28.7,0,0,0-8.8,1.8v-.1c-2.4-1.3.3-19.9.3-19.9S364.8,213.2,366.9,215Z" transform="translate(228.33 22.73)"/>
@@ -989,7 +1044,7 @@
     </g>
     <path class="int-15" d="M389.9,213c3.9-1.3,7.1-5.2,5.9-8.9-.5-1.6-7.4-21.6-8.6-21.5-.8,0-2.7,5.7-1.1,11.1.7,2.3,2.2,4.9,2.3,8.9a7.58,7.58,0,0,1-.5,3,9.64,9.64,0,0,1-3.7,3.8c-1.9,1.2-4.4,2-6,3.4C380.8,214.7,387.1,213.9,389.9,213Z" transform="translate(228.33 22.73)"/>
   </g>
-  <g id="project2" class="project hide">
+  <g id="project2" class="project hide clickable">
     <g id="castle">
       <path class="int-16" d="M423.92,153.25c.66-.21,2.48,2.2,8,6.17,0,0,5.61,4.1,5.05,5.82-.38,1.21-1.91.91-4.55,3.47a11.94,11.94,0,0,0-2.54,3.37,6.88,6.88,0,0,0-.72,2c-.38,2.37,1.09,3.64.58,3.95-1.36.91-15.86-5.38-14.56-9.83,1-3.29,9.47-2.95,11.43-7C428.42,157.45,423,153.53,423.92,153.25Z" transform="translate(228.33 22.73)"/>
       <path class="int-16" d="M406.62,142.85c0,2.06,0,4.68,1.88,5.87,2.27,1.44,5.32-.48,8.6.45a8.75,8.75,0,0,1,6,9.37c-.91,5.27-7.57,5.79-7.88,9.68-.44,5.64,13.5,7.15,15.7,14,2.73,8.4-12,16.44-20.93,19.11-2.18.65-6.37,1.82-9.1.76s-2.73-4-2.73-5c0-2.26,1.16-3.64,1.76-4.78,1.45-2.73.26-4.87-5.46-14.63-5.64-9.58-5.72-9.54-5.68-10,.57-6,9.1-6.63,14.35-14.86,3.89-6.06,3.56-12.39,3.75-12.37S406.61,141.39,406.62,142.85Z" transform="translate(228.33 22.73)"/>
@@ -1126,7 +1181,7 @@
       </g>
     </g>
   </g>
-  <g id="nav-menu" class="project hide">
+  <g id="nav-menu" class="project hide clickable">
     <path class="int-55" d="M374.1,78.9l.81,82,81,.19S458.09,82.1,374.1,78.9Z" transform="translate(228.33 22.73)"/>
     <path class="int-55" d="M455.65,162.07l-82,.86-.14,81S452.51,246.06,455.65,162.07Z" transform="translate(228.33 22.73)"/>
     <path class="int-55" d="M291,161l82-.76.24-81S294.24,77,291,161Z" transform="translate(228.33 22.73)"/>
@@ -1152,7 +1207,7 @@
       <path class="int-64" d="M363,165h7l1.81-6.35a.2.2,0,0,1,.38,0l3.58,11.63a.2.2,0,0,0,.39,0l1.71-7.71a.2.2,0,0,1,.37,0L380,166h6" transform="translate(228.33 22.73)"/>
     </g>
   </g>
-  <g id="swisStyle" class="project hide">
+  <g id="swisStyle" class="project hide clickable">
     <g id="swisstyle-2" data-name="swisstyle">
       <text class="int-65" transform="matrix(0.83, -0.56, -0.56, -0.83, 584.77, 166.52)">Style</text>
       <text class="int-66" transform="translate(528.64 231.74) rotate(-34.01)">Swis</text>
@@ -1163,13 +1218,14 @@
       <ellipse class="int-67" cx="646.53" cy="229.73" rx="23" ry="22.5"/>
     </g>
   </g>
-  <text class="text hide int-69" transform="translate(840 56.39)">Miss Chili <tspan x="0" y="48">mini game</tspan></text>
-  <text class="text hide int-69" transform="translate(120 319.39)"><tspan class="int-69">Y</tspan><tspan x="11.73" y="0">oung Frankenstein</tspan><tspan x="0" y="48" xml:space="preserve"> interactive teaser</tspan></text>
-  <text class="text hide int-69" transform="translate(843 331.39)">Swiss Style<tspan x="0" y="48">responsive webpage</tspan></text>
-  <text class="text hide int-69" transform="translate(221 34.39)">Animated <tspan x="0" y="48">menu</tspan></text>
+  <text class="text hide int-69 clickable" transform="translate(840 56.39)">Miss Chili <tspan x="0" y="48">mini game</tspan></text>
+  <text class="text hide int-69 clickable" transform="translate(120 319.39)"><tspan class="int-69">Y</tspan><tspan x="11.73" y="0">oung Frankenstein</tspan><tspan x="0" y="48" xml:space="preserve"> interactive teaser</tspan></text>
+  <text class="text hide int-69 clickable" transform="translate(843 331.39)">Swiss Style<tspan x="0" y="48">responsive webpage</tspan></text>
+  <text class="text hide int-69 clickable" transform="translate(221 34.39)">Animated <tspan x="0" y="48">menu</tspan></text>
 </svg>
 
 
+<footer class="lg-scrn">Designed by Ma&scaron;a Wu &copy; November 2017</footer>
 
 
     </div>
@@ -1248,11 +1304,15 @@
         function showIntro() {
           screen.classList.remove("hide");
             start.classList.remove("hide");
-            start.classList.add();
+            innerDia[0].classList.remove("hide");
+            innerDia[1].classList.remove("hide");
+            innerDia[2].classList.remove("hide");
+            innerDia[3].classList.remove("hide");
         }
 
 
         screen.addEventListener("click", startMe);
+
 
         function startMe() {
 
@@ -1344,6 +1404,10 @@
             function aniFirst() {
               start.classList.add("hide");
 
+            innerDia[1].classList.add("hide");
+            innerDia[2].classList.add("hide");
+            innerDia[3].classList.add("hide");
+
             innerDia[0].classList.remove("hide");
             text[0].classList.remove("hide");
             project[0].classList.remove("hide");
@@ -1400,12 +1464,7 @@
                  console.log("4")
              });
 
-
-
              line[3].addEventListener("animationend", aniFirst)
-
-
-
 
         }
 
